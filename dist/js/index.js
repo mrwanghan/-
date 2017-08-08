@@ -9,11 +9,7 @@ var controlManager = root.controlManager;
 var controlmanager;
 var audioplayer = new root.audioPlayer();
 var songList;
-audioplayer.audio.addEventListener("canplaythrough",function(){
-    function canPlay(){
-        console.log("chenggong")
-    }
-},false);
+
 $scope.on("play:change", function(event, index, flag){
     var curSong = songList[index];
     render(curSong);
@@ -23,7 +19,9 @@ $scope.on("play:change", function(event, index, flag){
         audioplayer.play();
         processor.start();
         lyric.show();               //歌词展示
-        canPlay()
+        audioplayer.audio.addEventListener("canplaythrough",function(){
+            console.log("chenggong1")
+        },false);
     }
     
     processor.renderTime(curSong.duration);
@@ -34,7 +32,9 @@ $scope.find(".play-btn").on("click", function() {
         audioplayer.play();
         processor.start();
         lyric.show();               //歌词展示
-        canPlay()
+        audioplayer.audio.addEventListener("canplaythrough",function(){
+            console.log("chenggong2")
+        },false);
     }else{
         audioplayer.pause();
         processor.stop();
