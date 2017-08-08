@@ -72,7 +72,7 @@ body {
   color: rgba(255, 255, 255, 0.6);
   overflow: hidden;
   line-height: 1.5;
-  font-size: 2.7vh;
+  font-size: 3vh;
 }
 .wrapper .song-lyric .song-lyric-show .lyric-time {
   display: none;
@@ -84,10 +84,11 @@ body {
 .wrapper .song-lyric .song-lyric-show .song-lyric-content .song-lyric-line {
   padding-bottom: 1.2vh;
   height: 4vh;
+  line-height: 4vh;
 }
 .wrapper .song-lyric .song-lyric-show .song-lyric-content .song-lyric-line.light {
   color: #fff;
-  font-size: 3vh;
+  font-size: 3.3vh;
   font-weight: 500;
   overflow: hidden;
 }
