@@ -10,8 +10,30 @@ body {
     background-position: 50%;
     background-repeat: no-repeat;  
 }
-
+header{
+    width: 100vw;
+    height: 100vh;
+    background: url('http://mo.kugou.com/download/static/images/v2/p5.jpg');
+    background-size: 100% 100%;
+    text-align: center;
+    img{
+        margin-top: 15vh;
+    }
+    .btn-welcome{
+        position: absolute;
+        top: 69%;
+        left: 50%;
+        margin-left: -15vh;
+        width: 30vh;
+        height: 8vh;
+        line-height: 8vh;
+        color: #379ee6;
+        border: 2px solid #379ee6;
+        border-radius: 36px;
+    }
+}
 .wrapper {
+    visibility: hidden;
     width: 100vw;
     height: 100vh;
     padding-top: 25px;
@@ -148,10 +170,10 @@ body {
     }
     .song-control {
         position: absolute;
-        height: 9vh;
+        height: 11vh;
         width: 100%;
         bottom: 0;
-        background-color: rgba(0,0,0,.3);
+        //background-color: rgba(0,0,0,.3);
         display: flex;
         .btn-wrapper {
             flex: 1;
@@ -166,18 +188,20 @@ body {
             }
         }
         .prev-btn {
-            background-image: url(../img/icon-prev.png);
+            background-image: url(http://m.kugou.com/v3/static/images/index/play_prev.png);
+            background-size: 5.5vh 5.5vh;
         }
         .play-btn {
-            background-image: url(../img/icon-play.png);
-            background-size: 4.5vh 4.5vh;
+            background-image: url(http://m.kugou.com/v3/static/images/index/play_play.png);
+            background-size: 8vh 8vh;
             &.playing {
-                background-image: url(../img/icon-pause.png);
-                background-size: 4.5vh 4.5vh; 
+                background-image: url(http://m.kugou.com/v3/static/images/index/play_pause.png);
+                background-size: 8vh 8vh; 
             }
         }
         .next-btn {
-            background-image: url(../img/icon-next.png);
+            background-image: url(http://m.kugou.com/v3/static/images/index/play_next.png);
+            background-size: 5.5vh 5.5vh;
         }
         .list-btn {
             background-image: url(../img/icon-list.png);

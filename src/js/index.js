@@ -9,36 +9,44 @@ var controlManager = root.controlManager;
 var controlmanager;
 var audioplayer = new root.audioPlayer();
 var songList;
+var lock = false;
 
+audioplayer.audio.addEventListener("canplaythrough",function(){
+    lock = true;
+    console.log("ok")
+},false);
+
+$scope.on(".btn-welcome").on("click", function(){
+    $scope.find("header").css({"display":"none"});
+    $scope.find(".wrapper").css({"visibility":"visible"});
+})
 $scope.on("play:change", function(event, index, flag){
     var curSong = songList[index];
     render(curSong);
-    lyric.render(curSong);          //歌词加载
+    lyric.render(curSong);          
     audioplayer.setAudioSource(curSong.audio);
     if(audioplayer.status == "play" || flag){
-        audioplayer.play();
-        processor.start();
-        lyric.show();               //歌词展示
-        audioplayer.audio.addEventListener("canplaythrough",function(){
+        if(lock){
             console.log("chenggong1")
-        },false);
+            audioplayer.play();
+            processor.start();
+            lyric.show(); 
+        } 
     }
-    
     processor.renderTime(curSong.duration);
 })
 $scope.find(".play-btn").on("click", function() {
     $scope.find(this).toggleClass("playing")
-    if(audioplayer.status == "pause"){
-        audioplayer.play();
-        processor.start();
-        lyric.show();               //歌词展示
-        audioplayer.audio.addEventListener("canplaythrough",function(){
-            console.log("chenggong2")
-        },false);
-    }else{
-        audioplayer.pause();
-        processor.stop();
-    }
+    //if(lock){
+        if(audioplayer.status == "pause"){
+            audioplayer.play();
+            processor.start();
+            lyric.show(); 
+        }else{
+            audioplayer.pause();
+            processor.stop();
+        }
+    //}
 })
 $scope.find(".prev-btn").on("click", function() {
     var index = controlmanager.prev();
@@ -107,6 +115,5 @@ function successCb(data) {
     playList.render(data);
     bindTouch();
 }
-
 
 getData("/music-player/dist/mock/data.json", successCb)
