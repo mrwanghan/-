@@ -102,4 +102,5 @@ function successCb(data) {
     bindTouch();
 }
 
+
 getData("/music-player/dist/mock/data.json", successCb)
