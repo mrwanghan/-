@@ -11,9 +11,11 @@ var audioplayer = new root.audioPlayer();
 var songList;
 
 function canPlay() {
-    audioplayer.play();
-    processor.start();
-    lyric.show();
+    window.onload = function() {
+        audioplayer.play();
+        processor.start();
+        lyric.show();
+    }
 }
 $scope.on("play:change", function(event, index, flag){
     var curSong = songList[index];
@@ -21,10 +23,10 @@ $scope.on("play:change", function(event, index, flag){
     lyric.render(curSong);          
     audioplayer.setAudioSource(curSong.audio);
     if(audioplayer.status == "play" || flag){
-        window.onload = function() {
+        
             console.log(111)
             canPlay();
-        }               
+                       
     }
     
     processor.renderTime(curSong.duration);
@@ -32,10 +34,10 @@ $scope.on("play:change", function(event, index, flag){
 $scope.find(".play-btn").on("click", function() {
     $scope.find(this).toggleClass("playing")
     if(audioplayer.status == "pause"){
-        window.onload = function() {
+        
             console.log(222)
             canPlay();
-        }              
+                      
     }else{
         audioplayer.pause();
         processor.stop();
