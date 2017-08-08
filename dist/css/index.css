@@ -10,28 +10,6 @@ body {
   background-position: 50%;
   background-repeat: no-repeat;
 }
-header {
-  width: 100vw;
-  height: 100vh;
-  background: url('http://mo.kugou.com/download/static/images/v2/p5.jpg');
-  background-size: 100% 100%;
-  text-align: center;
-}
-header img {
-  margin-top: 15vh;
-}
-header .btn-welcome {
-  position: absolute;
-  top: 69%;
-  left: 50%;
-  margin-left: -15vh;
-  width: 30vh;
-  height: 8vh;
-  line-height: 8vh;
-  color: #379ee6;
-  border: 2px solid #379ee6;
-  border-radius: 36px;
-}
 .wrapper {
   visibility: hidden;
   width: 100vw;
@@ -87,7 +65,7 @@ header .btn-welcome {
   box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.6);
 }
 .wrapper .song-lyric {
-  padding: 1vh 5.3vh 5vh 5.3vh;
+  padding: 1vh 5.3vh 3vh 5.3vh;
 }
 .wrapper .song-lyric .song-lyric-show {
   height: 25vh;
@@ -171,7 +149,7 @@ header .btn-welcome {
 }
 .wrapper .song-control {
   position: absolute;
-  height: 11vh;
+  height: 13vh;
   width: 100%;
   bottom: 0;
   display: flex;

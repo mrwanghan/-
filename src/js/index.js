@@ -16,10 +16,10 @@ audioplayer.audio.addEventListener("canplaythrough",function(){
     console.log("ok")
 },false);
 
-$scope.on(".btn-welcome").on("click", function(){
-    $scope.find("header").css({"display":"none"});
-    $scope.find(".wrapper").css({"visibility":"visible"});
-})
+// $scope.on(".btn-welcome").on("click", function(){
+//     $scope.find("header").css({"display":"none"});
+//     $scope.find(".wrapper").css({"visibility":"visible"});
+// })
 $scope.on("play:change", function(event, index, flag){
     var curSong = songList[index];
     render(curSong);
