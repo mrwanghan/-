@@ -22,6 +22,7 @@ $scope.on("play:change", function(event, index, flag){
     audioplayer.setAudioSource(curSong.audio);
     if(audioplayer.status == "play" || flag){
         window.onload = function() {
+            console.log(111)
             canPlay();
         }               
     }
@@ -32,6 +33,7 @@ $scope.find(".play-btn").on("click", function() {
     $scope.find(this).toggleClass("playing")
     if(audioplayer.status == "pause"){
         window.onload = function() {
+            console.log(222)
             canPlay();
         }              
     }else{
