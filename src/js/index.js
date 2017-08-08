@@ -10,13 +10,7 @@ var controlmanager;
 var audioplayer = new root.audioPlayer();
 var songList;
 
-function canPlay() {
-    window.onload = function() {
-        audioplayer.play();
-        processor.start();
-        lyric.show();
-    }
-}
+
 $scope.on("play:change", function(event, index, flag){
     var curSong = songList[index];
     render(curSong);
@@ -57,7 +51,13 @@ $scope.find(".like-btn").on("click", function() {
 $scope.find(".list-btn").on("click", function() {
     playList.show(controlmanager);
 })
-
+function canPlay() {
+    window.onload = function() {
+        audioplayer.play();
+        processor.start();
+        lyric.show();
+    }
+}
 function bindTouch(){
     var $sliderPoint = $scope.find(".slider-point");
     var offset = $scope.find(".pro-wrapper").offset();
