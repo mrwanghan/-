@@ -10,7 +10,9 @@ var controlmanager;
 var audioplayer = new root.audioPlayer();
 var songList;
 audioplayer.audio.addEventListener("canplaythrough",function(){
-    console.log("加载成功！");
+    function canPlay(){
+        console.log("chenggong")
+    }
 },false);
 $scope.on("play:change", function(event, index, flag){
     var curSong = songList[index];
@@ -21,6 +23,7 @@ $scope.on("play:change", function(event, index, flag){
         audioplayer.play();
         processor.start();
         lyric.show();               //歌词展示
+        canPlay()
     }
     
     processor.renderTime(curSong.duration);
@@ -31,6 +34,7 @@ $scope.find(".play-btn").on("click", function() {
         audioplayer.play();
         processor.start();
         lyric.show();               //歌词展示
+        canPlay()
     }else{
         audioplayer.pause();
         processor.stop();
