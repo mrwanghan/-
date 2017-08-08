@@ -9,18 +9,18 @@ var controlManager = root.controlManager;
 var controlmanager;
 var audioplayer = new root.audioPlayer();
 var songList;
-
-
+audioplayer.audio.addEventListener("canplaythrough",function(){
+    console.log("加载成功！");
+},false);
 $scope.on("play:change", function(event, index, flag){
     var curSong = songList[index];
     render(curSong);
-    lyric.render(curSong);          
+    lyric.render(curSong);          //歌词加载
     audioplayer.setAudioSource(curSong.audio);
     if(audioplayer.status == "play" || flag){
-        
-            console.log(111)
-            canPlay();
-                       
+        audioplayer.play();
+        processor.start();
+        lyric.show();               //歌词展示
     }
     
     processor.renderTime(curSong.duration);
@@ -28,10 +28,9 @@ $scope.on("play:change", function(event, index, flag){
 $scope.find(".play-btn").on("click", function() {
     $scope.find(this).toggleClass("playing")
     if(audioplayer.status == "pause"){
-        
-            console.log(222)
-            canPlay();
-                      
+        audioplayer.play();
+        processor.start();
+        lyric.show();               //歌词展示
     }else{
         audioplayer.pause();
         processor.stop();
@@ -51,13 +50,7 @@ $scope.find(".like-btn").on("click", function() {
 $scope.find(".list-btn").on("click", function() {
     playList.show(controlmanager);
 })
-function canPlay() {
-    window.onload = function() {
-        audioplayer.play();
-        processor.start();
-        lyric.show();
-    }
-}
+
 function bindTouch(){
     var $sliderPoint = $scope.find(".slider-point");
     var offset = $scope.find(".pro-wrapper").offset();
@@ -88,7 +81,7 @@ function bindTouch(){
         var duration = curDuration * percentage;
         audioplayer.jumToPlay(duration);
         processor.start(percentage);
-        lyric.show();           
+        lyric.show();           //歌词展示
         $scope.find(".play-btn").addClass("playing");
     })
 }
