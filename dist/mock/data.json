@@ -1,7 +1,7 @@
 [
     {
         "image": "/music-player/dist/source/陈奕迅 - 十年.jpg",
-        "audio": "http://fs.web.kugou.com/1f23196e2363585d1527031e77538f6d/59895411/G002/M07/14/10/Qg0DAFT6DmGAJqCtADF7RhFK-Y4119.mp3",
+        "audio": "/music-player/dist/source/陈奕迅 - 十年.mp3",
         "song": "十年",
         "album": "黑白灰",
         "singer": "陈奕迅",
@@ -59,7 +59,7 @@
     },
     {
         "image": "/music-player/dist/source/林俊杰 - 崇拜.jpg",
-        "audio": "http://fs.web.kugou.com/deafd8c812f1cfdc129de751ea9c4a77/59895953/G087/M08/09/14/lw0DAFh4qNWACL4qAEXghfuOI3E783.mp3",
+        "audio": "/music-player/dist/source/林俊杰 - 崇拜.mp3",
         "song": "崇拜",
         "album": "梦想的声音",
         "singer": "林俊杰",
@@ -128,7 +128,7 @@
     },
     {
         "image": "/music-player/dist/source/赵雷 - 成都.jpg",
-        "audio": "http://fs.web.kugou.com/cfadbddbfa6fd17a7c4b0a4ea867d112/598950cd/G085/M04/04/19/lQ0DAFh_OnOAEvaeAFAaxR3PVO4400.mp3",
+        "audio": "/music-player/dist/source/赵雷 - 成都.mp3",
         "song": "成都",
         "album": "无法长大",
         "singer": "赵雷",
